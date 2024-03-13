@@ -6,6 +6,7 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-06 15:29:09</sys_created_on>
+            <sys_id>21d974e787700e100106326e0ebb35b5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>severity</sys_name>
             <sys_package display_value="Cyberint App" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
@@ -29,6 +30,7 @@
             <sys_created_on>2022-09-06 15:29:30</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>04f9fce787700e100106326e0ebb35b0</sys_id>
             <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2022-09-06 15:30:23</sys_updated_on>
@@ -48,6 +50,7 @@
             <sys_created_on>2022-09-06 15:29:09</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>80f9fce787700e100106326e0ebb35b1</sys_id>
             <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2022-09-06 15:30:12</sys_updated_on>
@@ -67,6 +70,7 @@
             <sys_created_on>2022-09-06 15:29:15</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>00f9fce787700e100106326e0ebb35b2</sys_id>
             <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2022-09-06 15:30:17</sys_updated_on>
@@ -86,6 +90,7 @@
             <sys_created_on>2022-09-06 15:30:05</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>8cf9fce787700e100106326e0ebb35b2</sys_id>
             <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2022-09-06 15:30:30</sys_updated_on>
