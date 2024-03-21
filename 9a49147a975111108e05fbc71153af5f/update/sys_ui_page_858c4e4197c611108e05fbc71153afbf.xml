@@ -52,8 +52,6 @@
 		<a href="https://cyberint.com/customer-support/" target="_blank" rel="noopener noreferrer nofollow">For more information, please visit Cyberint suppport page</a> </p><br></br>
 
 </body>
-<!-- 	<footer style="background-color:#dfdfdd;"> Tal </footer>
- -->
 </html>
 </j:jelly>]]></html>
         <name>support_ui_page</name>
@@ -62,13 +60,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-09-18 14:58:17</sys_created_on>
         <sys_id>858c4e4197c611108e05fbc71153afbf</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>91</sys_mod_count>
         <sys_name>support_ui_page</sys_name>
         <sys_package display_value="Cyberint App" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Cyberint App">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sys_ui_page_858c4e4197c611108e05fbc71153afbf</sys_update_name>
         <sys_updated_by>KirillL</sys_updated_by>
-        <sys_updated_on>2024-01-17 21:01:19</sys_updated_on>
+        <sys_updated_on>2024-03-21 08:04:52</sys_updated_on>
     </sys_ui_page>
 </record_update>
