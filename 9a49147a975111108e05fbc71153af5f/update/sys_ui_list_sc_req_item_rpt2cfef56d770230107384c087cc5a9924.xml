@@ -3,7 +3,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>number</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -18,7 +18,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>cat_item</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
@@ -33,7 +33,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>stage</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
@@ -48,7 +48,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>request</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
@@ -63,7 +63,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>request.requested_for</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
@@ -78,7 +78,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>request.opened_by</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
@@ -93,7 +93,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>due_date</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
@@ -108,7 +108,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>quantity</element>
-            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="d1ee826d87f33d100106326e0ebb3560">ddee826d87f33d100106326e0ebb3561</list_id>
+            <list_id display_value="sc_req_item" element="NULL" name="sc_req_item" parent="NULL" relationship="NULL" sys_domain="global" view="ed6ab82b87700e100106326e0ebb352e">ddee826d87f33d100106326e0ebb3561</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
@@ -145,7 +145,7 @@
             <sys_updated_by>KirillL</sys_updated_by>
             <sys_updated_on>2024-01-17 20:27:11</sys_updated_on>
             <sys_user/>
-            <view display_value="Rpt2cfef56d770230107384c087cc5a9924" name="RPT2cfef56d770230107384c087cc5a9924">d1ee826d87f33d100106326e0ebb3560</view>
+            <view display_value="Rpt2cfef56d770230107384c087cc5a9924" name="RPT2cfef56d770230107384c087cc5a9924">ed6ab82b87700e100106326e0ebb352e</view>
             <view_name/>
         </sys_ui_list>
     </sys_ui_list>
