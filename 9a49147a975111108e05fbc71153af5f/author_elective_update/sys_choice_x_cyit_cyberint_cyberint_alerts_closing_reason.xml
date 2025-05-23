@@ -23,15 +23,15 @@
             <label>False Positive</label>
             <language>en</language>
             <name>x_cyit_cyberint_cyberint_alerts</name>
-            <sequence/>
+            <sequence>0</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-08-25 11:06:46</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>3</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-08 07:52:27</sys_updated_on>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
             <value>false_positive</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -42,16 +42,149 @@
             <label>Irrelevant</label>
             <language>en</language>
             <name>x_cyit_cyberint_cyberint_alerts</name>
-            <sequence/>
+            <sequence>1</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-08-25 11:06:39</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-08 07:52:34</sys_updated_on>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
             <value>irrelevant</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>closing_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Irrelevant alert type</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_cyberint_alerts</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2025-05-14 19:23:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
+            <value>irrelevant_alert_subtype</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>closing_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>No Longer a Threat</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_cyberint_alerts</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2025-05-14 19:23:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
+            <value>no_longer_a_threat</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>closing_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Asset Shouldn't Be Monitored</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_cyberint_alerts</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2025-05-14 19:23:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
+            <value>asset_should_not_be_monitored</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>closing_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Asset Belongs To My Org</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_cyberint_alerts</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2025-05-14 19:23:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
+            <value>asset_belongs_to_my_organization</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>closing_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>No longer detected by ASM [Automatically]</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_cyberint_alerts</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2025-05-14 19:23:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
+            <value>asm_no_longer_detected</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>closing_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Closed in ASM [Manually]</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_cyberint_alerts</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2025-05-14 19:23:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
+            <value>asm_manually_closed</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>closing_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_cyberint_alerts</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2025-05-14 19:23:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
+            <value>other</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
@@ -61,15 +194,15 @@
             <label>Resolved</label>
             <language>en</language>
             <name>x_cyit_cyberint_cyberint_alerts</name>
-            <sequence/>
+            <sequence>9</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-08-25 11:06:29</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-08 07:52:42</sys_updated_on>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:23:12</sys_updated_on>
             <value>resolved</value>
         </sys_choice>
     </sys_choice>

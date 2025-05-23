@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>true</client_callable>
         <description/>
+        <mobile_callable>false</mobile_callable>
         <name>REST_API_CALL</name>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var REST_API_CALL = Class.create();
 
 REST_API_CALL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
