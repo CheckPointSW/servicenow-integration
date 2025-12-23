@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description/>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id>o47ilZvD+sBeYOLVYgZ9dPqffnePihSM0bjRvCe9Jjc=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_cyit_cyberint.user</name>

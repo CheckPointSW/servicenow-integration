@@ -74,5 +74,6 @@
         <sys_update_name>sys_alias_templates_2ef3babf971111108e05fbc71153affe</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-08-20 23:56:23</sys_updated_on>
+        <test_action/>
     </sys_alias_templates>
 </record_update>
