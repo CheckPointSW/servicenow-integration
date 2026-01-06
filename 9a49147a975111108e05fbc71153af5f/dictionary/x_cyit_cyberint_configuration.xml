@@ -61,8 +61,13 @@
                 <element inactive_on_update="false" label="unauthorized trading" sequence="32" value="unauthorized_trading"/>
                 <element inactive_on_update="false" label="victim report" sequence="33" value="victim_report"/>
                 <element inactive_on_update="false" label="website vulnerabilities" sequence="34" value="website_vulnerabilities"/>
-                <element inactive_on_update="false" label="missing hsts header detected on exposed company asset" sequence="35" value="web_app_security_missing_hsts_header_detected"/>
-                <element inactive_on_update="false" label="misconfigured hsts header detected on exposed company asset" sequence="36" value="web_app_security_misconfigured_hsts_header_detected"/>
+                <element inactive_on_update="false" label="Missing HSTS Header Detected on Exposed Company Asset" sequence="35" value="web_app_security_missing_hsts_header_detected"/>
+                <element inactive_on_update="false" label="Misconfigured HSTS Header Detected on Exposed Company Asset" sequence="36" value="web_app_security_misconfigured_hsts_header_detected"/>
+                <element inactive_on_update="false" label="Missing X-Frame-Options Header Detected on Exposed Company Asset" sequence="37" value="web_app_security_missing_x_frame_options_header_detected"/>
+                <element inactive_on_update="false" label="Misconfigured X-Frame-Options Header Detected on Exposed Company Asset" sequence="38" value="web_app_security_misconfigured_x_frame_options_header_detected"/>
+                <element inactive_on_update="false" label="Missing X-Content-Type-Options Header Detected on Exposed Company Asset" sequence="39" value="web_app_security_missing_x_content_type_options_header_detected"/>
+                <element inactive_on_update="false" label="Misconfigured X-Content-Type-Options Header Detected on Exposed Company Asset" sequence="40" value="web_app_security_misconfigured_x_content_type_options_header_detected"/>
+                <element inactive_on_update="false" label="Missing Content-Security-Policy Header Detected on Exposed Company Asset" sequence="41" value="web_app_security_missing_content_security_policy_header_detected"/>
             </choice>
         </element>
         <element label="Updated date" max_length="40" name="updated_date" type="glide_date_time"/>
