@@ -19,12 +19,12 @@
         <run_dayofweek>1</run_dayofweek>
         <run_daysofweek/>
         <run_end/>
-        <run_month/>
-        <run_period>1970-01-01 00:01:00</run_period>
+        <run_month>1</run_month>
+        <run_period>1970-01-01 00:10:00</run_period>
         <run_start>2024-07-07 07:45:00</run_start>
         <run_time>1970-01-01 08:01:00</run_time>
         <run_type>periodically</run_type>
-        <run_weekinmonth/>
+        <run_weekinmonth>1</run_weekinmonth>
         <script><![CDATA[(function executeRule(current, previous) {
 
     function attachments(alert_id, alert_sys_id, attachment_id, file_name) {
@@ -82,6 +82,9 @@
         let rightnow = new GlideDateTime();
 
         let last_fetch_time = instance.last_fetch_time;
+		if (!last_fetch_time || String(last_fetch_time).trim() === '') {
+			last_fetch_time = right_now.addMonthsUTC(-1);
+		}
         logger('DEBUG', `last_fetch_time value: ${last_fetch_time}`);
 
         const filters = {
@@ -105,14 +108,14 @@
 
         r.setRequestBody(JSON.stringify(body));
 
-        logger('INFO', `Fetch Request Body: ${r.getRequestBody()}`);
-        logger('INFO', `Fetch Request Headers: ${JSON.stringify(r.getRequestHeaders())}`);
+        logger('DEBUG', `Fetch Request Body: ${r.getRequestBody()}`);
+        logger('DEBUG', `Fetch Request Headers: ${JSON.stringify(r.getRequestHeaders())}`);
         const response = r.executeAsync();
         const responseBody = response.getBody();
         const httpStatus = response.getStatusCode();
 
         logger('DEBUG', `Fetch Response Status: ${httpStatus}`);
-        logger('INFO', `Fetch Response Body: ${responseBody}`);
+        logger('DEBUG', `Fetch Response Body: ${responseBody}`);
         const responseObj = JSON.parse(responseBody);
         return [responseObj, instance];
     }
@@ -130,6 +133,7 @@
                 cia.initialize();
             }
             cia.alert_id = alert.ref_id;
+            cia.title = alert.title;
             cia.status = alert.status;
             cia.description = alert.description;
             cia.recommendation = alert.recommendation;
@@ -198,7 +202,7 @@
             // if alert's update_date is ahead of previously stored instance_last_fetch_time (result == 1)
             if (new GlideDateTime(alert.update_date).compareTo(new GlideDateTime(instance_last_fetch_time)) == 1) {
                 instance_last_fetch_time = new GlideDateTime(alert.update_date);
-				instance_last_fetch_time.addSeconds(1);
+                instance_last_fetch_time.addSeconds(1);
             }
         }
         return instance_last_fetch_time;
@@ -228,13 +232,13 @@
             case 'INFO':
                 gs.info(`[${instance}] ${message}`);
                 break;
-            case 'DEBUG': 
+            case 'DEBUG':
                 gs.debug(`[${instance}] ${message}`);
                 break;
             case 'ERROR':
                 gs.error(`[${instance}] ${message}`);
                 break;
-            default: 
+            default:
                 // INFO
                 gs.info(`[${instance}] ${message}`);
         }
@@ -246,43 +250,44 @@
         instance.query();
         instance.next();
 
-        // Check if instance is active 
+        // Check if instance is active
         if (Object.is(instance.status.toLowerCase(), 'enable')) {
 
             // make it var for global script context
             var api_environment = instance.api_environment;
+
             var x_integration_type = 'ServiceNow';
             var x_integration_instance_name = instance.instance_name;
             var x_integration_instance_id = api_environment;
             var x_integration_customer_name = instance.company_name;
             var decrypted_token = instance.api_token.getDecryptedValue();
-			var x_integration_version = "";
-			/*
-			* Uncomment next block if you are developer :)
-			*/
-			/*
-			// let's extract version for developed app first
-			let grSysApp = new GlideRecord('sys_app');
-			grSysApp.addQuery('name', 'STARTSWITH', 'Cyberint');
-			grSysApp.query();
+            var x_integration_version = "";
+            /*
+            * Uncomment next block if you are developer :)
+            */
+            /*
+            // let's extract version for developed app first
+            let grSysApp = new GlideRecord('sys_app');
+            grSysApp.addQuery('name', 'STARTSWITH', 'Cyberint');
+            grSysApp.query();
 
-			if (grSysApp.next()) {
-				logger('INFO', `Application version: ${grSysApp.version}`);
-				var x_integration_version = grSysApp.version;
-			}
-			*/
+            if (grSysApp.next()) {
+                logger('INFO', `Application version: ${grSysApp.version}`);
+                var x_integration_version = grSysApp.version;
+            }
+            */
 
-			// let's extract version for store app, if undefined
-			if (x_integration_version == '' || x_integration_version == null || x_integration_version == "undefined") {
-				grSysApp = new GlideRecord('sys_store_app');
-				grSysApp.addQuery('name', 'STARTSWITH', 'Cyberint');
-				grSysApp.query();
+            // let's extract version for store app, if undefined
+            if (x_integration_version == '' || x_integration_version == null || x_integration_version == "undefined") {
+                grSysApp = new GlideRecord('sys_store_app');
+                grSysApp.addQuery('name', 'STARTSWITH', 'Cyberint');
+                grSysApp.query();
 
-				if (grSysApp.next()) {
-					logger('INFO', `Application version: ${grSysApp.version}`);
-					x_integration_version = grSysApp.version;
-				}
-			}
+                if (grSysApp.next()) {
+                    logger('INFO', `Application version: ${grSysApp.version}`);
+                    x_integration_version = grSysApp.version;
+                }
+            }
 
             logger('DEBUG', `Instance Status = "${instance.status}". About to start pulling...`);
             let x = 1;
@@ -320,14 +325,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-18 11:45:31</sys_created_on>
         <sys_id>cef871cf979111108e05fbc71153af8e</sys_id>
-        <sys_mod_count>408</sys_mod_count>
+        <sys_mod_count>418</sys_mod_count>
         <sys_name>Cyberint_Pulling_Script</sys_name>
         <sys_package display_value="Cyberint App" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Cyberint App">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sysauto_script_cef871cf979111108e05fbc71153af8e</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2025-12-23 12:20:50</sys_updated_on>
+        <sys_updated_by>KirillL</sys_updated_by>
+        <sys_updated_on>2026-02-02 10:52:30</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>

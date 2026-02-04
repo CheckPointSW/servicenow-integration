@@ -17,22 +17,22 @@
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>severity</element>
+            <element>title</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-09-18 10:53:35</sys_created_on>
-            <sys_id>1cf6998997c211108e05fbc71153af56</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2026-02-02 09:06:06</sys_created_on>
+            <sys_id>945e6eb583b236d097b7a970ceaad37e</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:06:24</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>status</element>
+            <element>severity</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
@@ -40,14 +40,14 @@
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-18 10:53:35</sys_created_on>
-            <sys_id>9cf6998997c211108e05fbc71153af56</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_id>1cf6998997c211108e05fbc71153af56</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:11</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>source</element>
+            <element>status</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
@@ -55,14 +55,14 @@
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-18 10:53:35</sys_created_on>
-            <sys_id>10f6998997c211108e05fbc71153af57</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_id>9cf6998997c211108e05fbc71153af56</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:13</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>type</element>
+            <element>source</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
@@ -70,14 +70,14 @@
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-18 10:53:35</sys_created_on>
-            <sys_id>90f6998997c211108e05fbc71153af57</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_id>10f6998997c211108e05fbc71153af57</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:17</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>category</element>
+            <element>type</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
@@ -85,14 +85,14 @@
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-18 10:53:35</sys_created_on>
-            <sys_id>14f6998997c211108e05fbc71153af57</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_id>90f6998997c211108e05fbc71153af57</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:21</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>updated_date</element>
+            <element>category</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
@@ -100,14 +100,14 @@
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-18 10:53:35</sys_created_on>
-            <sys_id>94f6998997c211108e05fbc71153af57</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_id>14f6998997c211108e05fbc71153af57</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:24</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>created_date</element>
+            <element>updated_date</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
@@ -115,14 +115,14 @@
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-18 10:53:35</sys_created_on>
-            <sys_id>18f6998997c211108e05fbc71153af57</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_id>94f6998997c211108e05fbc71153af57</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>sys_created_on</element>
+            <element>created_date</element>
             <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
@@ -130,10 +130,25 @@
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-09-18 10:53:35</sys_created_on>
+            <sys_id>18f6998997c211108e05fbc71153af57</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:31</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_created_on</element>
+            <list_id display_value="x_cyit_cyberint_cyberint_alerts" element="NULL" name="x_cyit_cyberint_cyberint_alerts" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10f6998997c211108e05fbc71153af55</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-09-18 10:53:35</sys_created_on>
             <sys_id>98f6998997c211108e05fbc71153af57</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-09-18 10:53:35</sys_updated_on>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-02-02 09:07:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
