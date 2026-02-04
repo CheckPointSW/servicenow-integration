@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_form_action_layout_item">
+    <sys_ux_form_action_layout_item action="INSERT_OR_UPDATE">
+        <action display_value="Test Connection">9e69c02f1b3991104c029758b04bcb31</action>
+        <active>true</active>
+        <animate_icon>false</animate_icon>
+        <color>secondary</color>
+        <description/>
+        <icon/>
+        <item_type>action</item_type>
+        <label>Test Connection</label>
+        <layout_group/>
+        <name>Test Connection</name>
+        <order>100</order>
+        <overflow>false</overflow>
+        <sys_class_name>sys_ux_form_action_layout_item</sys_class_name>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-01-29 13:34:29</sys_created_on>
+        <sys_id>bba5436c837efa9097b7a970ceaad35a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test Connection</sys_name>
+        <sys_package display_value="Cyberint App" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cyberint App">9a49147a975111108e05fbc71153af5f</sys_scope>
+        <sys_update_name>sys_ux_form_action_layout_item_bba5436c837efa9097b7a970ceaad35a</sys_update_name>
+        <sys_updated_by>KirillL</sys_updated_by>
+        <sys_updated_on>2026-01-29 13:34:29</sys_updated_on>
+        <table>x_cyit_cyberint_configuration</table>
+    </sys_ux_form_action_layout_item>
+</record_update>
