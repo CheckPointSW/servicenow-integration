@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="4c739b0f47402d104be2b28a436d4398" label="CyberInt Alerts" max_length="40" name="x_cyit_cyberint_cyberint_alerts" type="collection">
+    <element db_object_id="4c739b0f47402d104be2b28a436d4398" label="Cyberint Alerts" max_length="40" name="x_cyit_cyberint_cyberint_alerts" type="collection">
         <element label="Acknowledged by" max_length="40" name="acknowledged_by" read_only="true" type="string"/>
         <element label="Acknowledged date" max_length="40" name="acknowledged_date" read_only="true" type="glide_date_time"/>
         <element label="Alert ID" mandatory="true" max_length="40" name="alert_id" read_only="true" type="string"/>
-        <element display="true" label="Assign To" max_length="32" name="assign_to" reference="sys_user" type="reference"/>
+        <element label="Assign To" max_length="32" name="assign_to" reference="sys_user" type="reference"/>
         <element default="False" label="Attachments" max_length="40" name="attachments" read_only="true" type="string"/>
         <element label="category" max_length="40" name="category" read_only="true" type="string"/>
         <element choice="1" label="Closure reason" max_length="40" name="closing_reason" type="string">
@@ -60,6 +60,7 @@
         <element label="Targeted brands" max_length="4000" name="targeted_brands" read_only="true" type="glide_list"/>
         <element label="Targeted vectors" max_length="4000" name="targeted_vectors" read_only="true" type="glide_list"/>
         <element label="Threat actor" max_length="40" name="threat_actor" read_only="true" type="string"/>
+        <element display="true" label="Title" mandatory="true" max_length="255" name="title" read_only="true" type="string"/>
         <element label="type" max_length="40" name="type" read_only="true" type="string"/>
         <element label="Cyberint Updated Date" max_length="40" name="updated_date" read_only="true" type="glide_date_time"/>
         <index name="index">
