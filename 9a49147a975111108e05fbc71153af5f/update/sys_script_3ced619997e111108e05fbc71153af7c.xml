@@ -73,7 +73,7 @@
 
                 r.setStringParameter('api_environment', instance.api_environment);
                 const decrypted = instance.api_token.getDecryptedValue();
-
+				r.setRequestHeader('Content-Type', 'application/json');
                 r.setRequestHeader('Cookie', 'access_token=' + decrypted);
 
                 let data = {
@@ -117,7 +117,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3ced619997e111108e05fbc71153af7c</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>Mirroring</sys_name>
         <sys_overrides/>
         <sys_package display_value="Check Point Exposure Management Alerts" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
@@ -125,7 +125,7 @@
         <sys_scope display_value="Check Point Exposure Management Alerts">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sys_script_3ced619997e111108e05fbc71153af7c</sys_update_name>
         <sys_updated_by>KirillL</sys_updated_by>
-        <sys_updated_on>2025-05-20 07:56:46</sys_updated_on>
+        <sys_updated_on>2026-07-30 14:13:34</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>

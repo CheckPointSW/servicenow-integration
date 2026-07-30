@@ -30,6 +30,7 @@ REST_API_CALL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             }
         }
         r.setStringParameter('api_environment', api_environment);
+		r.setRequestHeader('Content-Type', 'application/json');
         r.setRequestHeader('Cookie', 'access_token=' + api_token);
 
         const response = r.executeAsync();
@@ -45,13 +46,13 @@ REST_API_CALL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-09-15 08:33:24</sys_created_on>
         <sys_id>01695d08974211108e05fbc71153af1e</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>REST_API_CALL</sys_name>
         <sys_package display_value="Check Point Exposure Management Alerts" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Check Point Exposure Management Alerts">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sys_script_include_01695d08974211108e05fbc71153af1e</sys_update_name>
         <sys_updated_by>KirillL</sys_updated_by>
-        <sys_updated_on>2024-01-17 20:57:44</sys_updated_on>
+        <sys_updated_on>2026-07-30 14:03:16</sys_updated_on>
     </sys_script_include>
 </record_update>
