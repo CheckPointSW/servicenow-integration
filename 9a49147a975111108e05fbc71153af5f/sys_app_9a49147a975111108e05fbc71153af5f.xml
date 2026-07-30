@@ -13,36 +13,76 @@
         <license_category>none</license_category>
         <license_definition/>
         <license_model>none</license_model>
-        <logo>3590c0458369ae1097b7a970ceaad30a</logo>
-        <menu display_value="Cyberint ServiceNow Security App">3d4b5cfa975111108e05fbc71153af55</menu>
-        <name>Cyberint App</name>
+        <logo>1bf0ab96934a07507f5f75856aba104f</logo>
+        <menu display_value="Check Point Exposure Management">03d4675e934a07507f5f75856aba10e4</menu>
+        <name>Check Point Exposure Management Alerts</name>
         <package_json/>
+        <package_resolver_version>1.0.0</package_resolver_version>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_cyit_cyberint</scope>
         <scoped_administration>false</scoped_administration>
-        <short_description>Cyberint application allows you to control the company incidents. </short_description>
+        <short_description>Check Point (Cyberint) Exposure Management Alerts application allows you to control the company incidents. </short_description>
         <source>x_cyit_cyberint</source>
-        <store_correlation_id>REPOAPP0002418630</store_correlation_id>
-        <store_url>https://tpp.servicenow.com/sn_appstore_s</store_url>
+        <store_correlation_id>REPOAPP0002723167</store_correlation_id>
+        <store_url/>
         <subscription_entitlement/>
         <sys_class_name>sys_app</sys_class_name>
         <sys_code/>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-17 10:06:29</sys_created_on>
         <sys_id>9a49147a975111108e05fbc71153af5f</sys_id>
-        <sys_mod_count>87</sys_mod_count>
+        <sys_mod_count>99</sys_mod_count>
         <sys_updated_by>KirillL</sys_updated_by>
-        <sys_updated_on>2026-02-04 11:16:40</sys_updated_on>
+        <sys_updated_on>2026-07-20 16:09:58</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
         <user_role display_value="x_cyit_cyberint.user" name="x_cyit_cyberint.user">960aac76979111108e05fbc71153af2e</user_role>
         <vendor/>
         <vendor_prefix/>
-        <version>1.1.15</version>
+        <version>1.1.19</version>
     </sys_app>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>checkpoint.svg</file_name>
+        <hash>d9697bbe717a61f2804a20b880d4f827684b919a098e7fd34d6e6e87e573ce25</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>1125</size_bytes>
+        <size_compressed>582</size_compressed>
+        <state>available</state>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-07-15 15:29:04</sys_created_on>
+        <sys_id>6e6167d6934a07507f5f75856aba1093</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-07-15 15:29:04</sys_updated_on>
+        <table_name>sys_app</table_name>
+        <table_sys_id>9a49147a975111108e05fbc71153af5f</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/w==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="checkpoint.svg" sys_id="6e6167d6934a07507f5f75856aba1093">6e6167d6934a07507f5f75856aba1093</sys_attachment>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-07-15 15:29:04</sys_created_on>
+        <sys_id>ae6167d6934a07507f5f75856aba1093</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>ZZTbbtswDIavu6cgvGvJ1FkqnF7sTQo3TQK4TVsHTbdh776fVL1eDIgZKf/Hgyg60/p+oPf923o6P+8GZ/1AH0/L87objpfLy+04Xq9Xew32/HYYPTOP4Ad6P+2vP84fu4GJqXh8BrqeHi7H3SDL4/50OF50ffftZlovP5c9Fjd2ZfpNj6dluaXvPrhHz/SHVHBfwn7Pc3pQYRo33+kgAaaX+8uR5uV+RYErD/SwG55yszmTa9aF2QSbE0WbonFsfaVkfTYu2urI2eyMSgIZKEmhYqB8MlCiMIG6IhCpJJDTyApRVzQHlM78Gsb/q3S9ypRshGuyqc3G2+bhFqLJNurKm2ajM2xDXUzVqGxbm51l1GJ9L5+8LYLngkp8IbacxbuIo4gVZXKDyAFJuKBW75AkVPzmIpKkBo7zKzyS5gswTUyJME6Nh0HfNtOEEziJmhVxG+wVroLgiUkwjSkipy2cOmg4Jya0LXAVgTWmwLxFUi8tEQ7aBtaU+qX5WIhYpQuCtdQJt/3gmqykNwmSFIowivdD0mc2baSrGxc1Ha4h21wxAUijrUR7syly/GRLIjG6JZjQt/84yh3hMnsrs6M7J5GcOkjpNS1VxxO1Zxld9CNImbiqgCEIMpl4PPr+ivsJ2HqZhiJh6gwuVnhwxr02me0KOkmZWDZZ6k3guL6iuySRvK4xBFX8RCThYhepgypSBzWKtCp10XyBTWJxemUUEeVEpUjT+mswjXhlJ/m/uPsLQQvr2mUEAAA=</data>
+        <length>764</length>
+        <position>1</position>
+        <sys_attachment display_value="checkpoint.svg" sys_id="6e6167d6934a07507f5f75856aba1093">6e6167d6934a07507f5f75856aba1093</sys_attachment>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-07-15 15:29:04</sys_created_on>
+        <sys_id>626167d6934a07507f5f75856aba1094</sys_id>
+    </sys_attachment_doc>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color/>
         <chunk_size_bytes>700000</chunk_size_bytes>
@@ -81,5 +121,44 @@
         <sys_created_by>KirillL</sys_created_by>
         <sys_created_on>2025-05-14 13:00:40</sys_created_on>
         <sys_id>f590c0458369ae1097b7a970ceaad30a</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>logo</file_name>
+        <hash>d9697bbe717a61f2804a20b880d4f827684b919a098e7fd34d6e6e87e573ce25</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>1125</size_bytes>
+        <size_compressed>582</size_compressed>
+        <state>available</state>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-07-15 15:27:12</sys_created_on>
+        <sys_id>1bf0ab96934a07507f5f75856aba104f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-07-15 15:27:13</sys_updated_on>
+        <table_name>ZZ_YYsys_app</table_name>
+        <table_sys_id>9a49147a975111108e05fbc71153af5f</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/w==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="logo" sys_id="1bf0ab96934a07507f5f75856aba104f">1bf0ab96934a07507f5f75856aba104f</sys_attachment>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-07-15 15:27:12</sys_created_on>
+        <sys_id>5bf0ab96934a07507f5f75856aba104f</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>ZZTbbtswDIavu6cgvGvJ1FkqnF7sTQo3TQK4TVsHTbdh776fVL1eDIgZKf/Hgyg60/p+oPf923o6P+8GZ/1AH0/L87objpfLy+04Xq9Xew32/HYYPTOP4Ad6P+2vP84fu4GJqXh8BrqeHi7H3SDL4/50OF50ffftZlovP5c9Fjd2ZfpNj6dluaXvPrhHz/SHVHBfwn7Pc3pQYRo33+kgAaaX+8uR5uV+RYErD/SwG55yszmTa9aF2QSbE0WbonFsfaVkfTYu2urI2eyMSgIZKEmhYqB8MlCiMIG6IhCpJJDTyApRVzQHlM78Gsb/q3S9ypRshGuyqc3G2+bhFqLJNurKm2ajM2xDXUzVqGxbm51l1GJ9L5+8LYLngkp8IbacxbuIo4gVZXKDyAFJuKBW75AkVPzmIpKkBo7zKzyS5gswTUyJME6Nh0HfNtOEEziJmhVxG+wVroLgiUkwjSkipy2cOmg4Jya0LXAVgTWmwLxFUi8tEQ7aBtaU+qX5WIhYpQuCtdQJt/3gmqykNwmSFIowivdD0mc2baSrGxc1Ha4h21wxAUijrUR7syly/GRLIjG6JZjQt/84yh3hMnsrs6M7J5GcOkjpNS1VxxO1Zxld9CNImbiqgCEIMpl4PPr+ivsJ2HqZhiJh6gwuVnhwxr02me0KOkmZWDZZ6k3guL6iuySRvK4xBFX8RCThYhepgypSBzWKtCp10XyBTWJxemUUEeVEpUjT+mswjXhlJ/m/uPsLQQvr2mUEAAA=</data>
+        <length>764</length>
+        <position>1</position>
+        <sys_attachment display_value="logo" sys_id="1bf0ab96934a07507f5f75856aba104f">1bf0ab96934a07507f5f75856aba104f</sys_attachment>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-07-15 15:27:12</sys_created_on>
+        <sys_id>1ff0ab96934a07507f5f75856aba104f</sys_id>
     </sys_attachment_doc>
 </record_update>

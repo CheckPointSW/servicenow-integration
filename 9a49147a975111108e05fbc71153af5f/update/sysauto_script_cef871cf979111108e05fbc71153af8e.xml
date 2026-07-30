@@ -27,6 +27,8 @@
         <run_weekinmonth>1</run_weekinmonth>
         <script><![CDATA[(function executeRule(current, previous) {
 
+    var PAGE_SIZE = 100;
+
     function attachments(alert_id, alert_sys_id, attachment_id, file_name) {
         let r = new sn_ws.RESTMessageV2('x_cyit_cyberint.Cyberint_API', 'GET - Alert attachments');
 
@@ -39,10 +41,14 @@
         const alert_file_name = `${alert_id}_attachment_${file_name}`;
         r.saveResponseBodyAsAttachment('x_cyit_cyberint_cyberint_alerts', alert_sys_id, alert_file_name);
 
-        const response = r.executeAsync();
+        const response = r.execute();
         const httpResponseStatus = response.getStatusCode();
+        if (httpResponseStatus < 200 || httpResponseStatus >= 300) {
+            logger('ERROR', `Add Attachment for alert ${alert_id} failed with HTTP ${httpResponseStatus}`);
+            deleteFailedAttachment(alert_sys_id, alert_file_name);
+            return;
+        }
         logger('DEBUG', `Add Attachment for alert ${alert_id} : Status Code ${httpResponseStatus}`);
-        logger('INFO', `Request Headers ${r.getRequestHeaders()}`);
     }
 
     function analysisReport(alert_id, alert_sys_id, file_name) {
@@ -56,77 +62,86 @@
         const alert_file_name = `${alert_id}_analysisReport_${file_name}`;
         r.saveResponseBodyAsAttachment('x_cyit_cyberint_cyberint_alerts', alert_sys_id, alert_file_name);
 
-        const response = r.executeAsync();
+        const response = r.execute();
         const httpResponseStatus = response.getStatusCode();
+        if (httpResponseStatus < 200 || httpResponseStatus >= 300) {
+            logger('ERROR', `Add Analysis Report for alert ${alert_id} failed with HTTP ${httpResponseStatus}`);
+            deleteFailedAttachment(alert_sys_id, alert_file_name);
+            return;
+        }
         logger('DEBUG', `Add Analysis Report for alert ${alert_id} : Status Code ${httpResponseStatus}`);
-        logger('INFO', `Request Headers ${r.getRequestHeaders()}`);
     }
 
-    function fetchAlerts(page) {
-        let r = new sn_ws.RESTMessageV2('x_cyit_cyberint.Cyberint_API', 'POST - Fetch alerts from CyberInt');
+    // arrays from the API may contain plain strings or objects;
+    // objects would otherwise stringify as "[object Object]"
+    function joinList(list) {
+        if (!Array.isArray(list) || !list.length) return '';
+        return list.map(item =>
+            (item !== null && typeof item === 'object') ? JSON.stringify(item) : String(item)
+        ).join(', ');
+    }
 
-        // set cookie header with token from credentials table
-        let instance = new GlideRecord('x_cyit_cyberint_configuration');
-        instance.addQuery('api_token', '!=', 0);
-        instance.query();
-        instance.next();
+    // saveResponseBodyAsAttachment is armed before execute(), so a failed request
+    // still leaves the error body attached to the record - remove it
+    function deleteFailedAttachment(record_sys_id, file_name) {
+        let att = new GlideRecord('sys_attachment');
+        att.addQuery('table_name', 'x_cyit_cyberint_cyberint_alerts');
+        att.addQuery('table_sys_id', record_sys_id);
+        att.addQuery('file_name', file_name);
+        att.query();
+        if (att.next()) {
+            att.deleteRecord();
+        }
+    }
+
+    function fetchAlerts(page, instance, fetch_from, fetch_to) {
+        let r = new sn_ws.RESTMessageV2('x_cyit_cyberint.Cyberint_API', 'POST - Fetch alerts from CyberInt');
 
         r = setRequestCustomHeaders(r);
         r = setRequestStringParameters(r);
+        r.setRequestHeader('Content-Type', 'application/json');
 
-        // set body filters with fields from credentials table
-        const severities = instance.severity.toString().split(",");
-        const types = instance.type.toString().split(",");
-
-        // use unix timestamp
-        let rightnow = new GlideDateTime();
-
-        let last_fetch_time = instance.last_fetch_time;
-		if (!last_fetch_time || String(last_fetch_time).trim() === '') {
-			last_fetch_time = right_now.addMonthsUTC(-1);
-		}
-        logger('DEBUG', `last_fetch_time value: ${last_fetch_time}`);
+        const severityValue = instance.getValue('severity');
+        const typeValue = instance.getValue('type');
 
         const filters = {
-          ...(instance.severity) && { "severity": severities },
-          ...(instance.type) && { "type": types },
-          ...({}) && {
+            ...(severityValue && { "severity": severityValue.split(",") }),
+            ...(typeValue && { "type": typeValue.split(",") }),
             "update_date": {
-                "from": String(last_fetch_time),
-                "to": String(rightnow)
+                "from": fetch_from,
+                "to": fetch_to
             }
-          }
         };
-
-        const size = 100;
 
         const body = {
             page,
-            size,
+            size: PAGE_SIZE,
             filters
         };
 
         r.setRequestBody(JSON.stringify(body));
 
         logger('DEBUG', `Fetch Request Body: ${r.getRequestBody()}`);
-        logger('DEBUG', `Fetch Request Headers: ${JSON.stringify(r.getRequestHeaders())}`);
-        const response = r.executeAsync();
+        const response = r.execute();
         const responseBody = response.getBody();
         const httpStatus = response.getStatusCode();
 
         logger('DEBUG', `Fetch Response Status: ${httpStatus}`);
         logger('DEBUG', `Fetch Response Body: ${responseBody}`);
-        const responseObj = JSON.parse(responseBody);
-        return [responseObj, instance];
+        if (httpStatus < 200 || httpStatus >= 300) {
+            throw new Error(`Fetch alerts failed with HTTP ${httpStatus}: ${responseBody}`);
+        }
+        return JSON.parse(responseBody);
     }
 
-    function createAlerts(responseObj, instance) {
-        var instance_last_fetch_time = instance.last_fetch_time;
+    function createAlerts(responseObj, instance, watermark) {
+        // watermark is a GlideDateTime; advanced past each newer alert's update_date
+        let new_watermark = watermark;
         for (const alert of responseObj.alerts) {
             let cia = new GlideRecord('x_cyit_cyberint_cyberint_alerts');
             cia.addQuery('alert_id', '=', alert.ref_id);
             cia.query();
-            exist_alert = cia.next();
+            const exist_alert = cia.next();
             logger('INFO', `Alert ${alert.ref_id} exist in ServiceNow = ${exist_alert}`);
             if (!exist_alert) {
                 // Create new alerts in ServiceNow
@@ -143,13 +158,8 @@
             cia.created_date = alert.created_date;
             cia.severity = alert.severity;
             cia.environment = alert.environment;
-            cia.created_date = alert.created_date;
             cia.updated_date = alert.update_date;
-            cia.acknowledged_by = alert.acknowledged_by;
-            // if acknowledged_by is not null
-            if (!Object.is(alert.acknowledged_by, null)) {
-                cia.acknowledged_by = alert.acknowledged_by.email;
-            }
+            cia.acknowledged_by = alert.acknowledged_by ? alert.acknowledged_by.email : '';
             if (alert.status == 'closed') {
                 cia.closing_reason = alert.closure_reason;
                 if (alert.closure_reason == 'other') {
@@ -157,27 +167,33 @@
                 } else {
                     cia.closure_reason_description = '';
                 }
+            } else {
+                // clear stale closure data if the alert was reopened
+                cia.closing_reason = '';
+                cia.closure_reason_description = '';
             }
             cia.acknowledged_date = alert.acknowledged_date;
             cia.confidence = alert.confidence;
-            cia.impacts = alert.impacts.toString();
-            cia.iocs = alert.iocs.toString();
+            cia.impacts = joinList(alert.impacts);
+            cia.iocs = (alert.iocs || []).map(i => `${i.type}: ${i.value}`).join('\n');
             cia.publish_date = alert.publish_date;
             cia.source_category = alert.source_category;
-            cia.related_entities = alert.related_entities.toString();
-            cia.tags = alert.tags.toString();
-            cia.targeted_brands = alert.targeted_brands.toString();
-            cia.targeted_vectors = alert.targeted_vectors.toString();
+            cia.related_entities = joinList(alert.related_entities);
+            cia.tags = joinList(alert.tags);
+            cia.targeted_brands = joinList(alert.targeted_brands);
+            cia.targeted_vectors = joinList(alert.targeted_vectors);
             cia.threat_actor = alert.threat_actor;
             cia.cyberint_alert = `https://${api_environment}.cyberint.io/alerts/alert/${alert.ref_id}`;
+            if (!exist_alert && instance.enrich_alert == true) {
+                cia.attachments = "True";
+            }
             if (!exist_alert) {
-                // Create new alerts in ServiceNow
                 cia.insert();
                 logger('INFO', `Alert ${cia.alert_id} created`);
                 // Enrich Alerts
                 const alert_id = alert.ref_id;
                 const alert_sys_id = cia.getUniqueValue();
-                if (instance.enrich_alert) {
+                if (instance.enrich_alert == true) {
                     logger('INFO', `Enrich Alert: TRUE`);
                     if (alert.attachments != null && alert.attachments.length) {
                         for (const attachment of alert.attachments) {
@@ -186,7 +202,6 @@
                             attachments(alert_id, alert_sys_id, attachment_id, attachments_file_name);
                         }
                     }
-                    cia.attachments = "True";
 
                     if (alert.analysis_report) {
                         const analysis_report_file_name = alert.analysis_report.name;
@@ -199,13 +214,13 @@
                 logger('INFO', `Alert ${cia.alert_id} updated`);
             }
 
-            // if alert's update_date is ahead of previously stored instance_last_fetch_time (result == 1)
-            if (new GlideDateTime(alert.update_date).compareTo(new GlideDateTime(instance_last_fetch_time)) == 1) {
-                instance_last_fetch_time = new GlideDateTime(alert.update_date);
-                instance_last_fetch_time.addSeconds(1);
+            // if alert's update_date is ahead of the current watermark (result == 1)
+            if (new GlideDateTime(alert.update_date).compareTo(new_watermark) == 1) {
+                new_watermark = new GlideDateTime(alert.update_date);
+                new_watermark.addSeconds(1);
             }
         }
-        return instance_last_fetch_time;
+        return new_watermark;
     }
 
     function setRequestCustomHeaders(r) {
@@ -244,20 +259,23 @@
         }
     }
 
+    // sensible default so error logs before config load are labeled
+    var x_integration_instance_name = 'Cyberint';
+
     try {
         let instance = new GlideRecord('x_cyit_cyberint_configuration');
-        instance.addQuery('api_token', '!=', 0);
+        instance.addNotNullQuery('api_token');
         instance.query();
-        instance.next();
+        if (!instance.next()) { logger('ERROR', 'No configuration record'); return; }
 
         // Check if instance is active
-        if (Object.is(instance.status.toLowerCase(), 'enable')) {
+        if ((instance.getValue('status') || '').toLowerCase() === 'enable') {
 
             // make it var for global script context
             var api_environment = instance.api_environment;
 
             var x_integration_type = 'ServiceNow';
-            var x_integration_instance_name = instance.instance_name;
+            x_integration_instance_name = instance.instance_name;
             var x_integration_instance_id = api_environment;
             var x_integration_customer_name = instance.company_name;
             var decrypted_token = instance.api_token.getDecryptedValue();
@@ -279,7 +297,7 @@
 
             // let's extract version for store app, if undefined
             if (x_integration_version == '' || x_integration_version == null || x_integration_version == "undefined") {
-                grSysApp = new GlideRecord('sys_store_app');
+                const grSysApp = new GlideRecord('sys_store_app');
                 grSysApp.addQuery('name', 'STARTSWITH', 'Cyberint');
                 grSysApp.query();
 
@@ -289,19 +307,29 @@
                 }
             }
 
+            // compute the fetch window once so it stays stable across pages;
+            // fall back to one month back on first run
+            let fetch_from = instance.getValue('last_fetch_time');
+            if (!fetch_from || fetch_from.trim() === '') {
+                const from = new GlideDateTime();
+                from.addMonthsUTC(-1);
+                fetch_from = String(from);
+            }
+            const fetch_to = String(new GlideDateTime());
+            logger('DEBUG', `Fetch window: ${fetch_from} -> ${fetch_to}`);
+
             logger('DEBUG', `Instance Status = "${instance.status}". About to start pulling...`);
             let x = 1;
             let total_alerts_to_fetch = 1;
-            var last_fetch_time = instance.last_fetch_time;
+            let last_fetch_time = new GlideDateTime(fetch_from);
             while (total_alerts_to_fetch > 0) {
-                const fetchValues = fetchAlerts(x);
-                const responseObject = fetchValues[0];
-                var sn_instance = fetchValues[1];
+                const responseObject = fetchAlerts(x, instance, fetch_from, fetch_to);
 
                 logger('INFO', `Total alerts: ${responseObject.total}`);
                 total_alerts_to_fetch = responseObject.total;
-                last_fetch_time = createAlerts(responseObject, sn_instance);
-                total_alerts_to_fetch -= (100 * x++);
+                // watermark threads through pages, so it ends as the run's global max
+                last_fetch_time = createAlerts(responseObject, instance, last_fetch_time);
+                total_alerts_to_fetch -= (PAGE_SIZE * x++);
 
                 if (total_alerts_to_fetch > 0) {
                     logger('INFO', `${total_alerts_to_fetch} more to fetch`);
@@ -309,30 +337,29 @@
             }
             logger('INFO', 'Finish fetching alerts');
 
-            sn_instance.last_fetch_time = last_fetch_time;
-            logger('INFO', `Update last_fetch_time: ${sn_instance.last_fetch_time}`);
-            sn_instance.script_last_run_time = new GlideDateTime();
-            sn_instance.update();
+            instance.last_fetch_time = last_fetch_time;
+            logger('INFO', `Update last_fetch_time: ${instance.last_fetch_time}`);
+            instance.script_last_run_time = new GlideDateTime();
+            instance.update();
         } else {
             logger('INFO', `Instance Status is ${instance.status}`);
         }
     } catch (ex) {
         logger('ERROR', ex);
     }
-})(current, previous);
-]]></script>
+})(current, previous);]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-18 11:45:31</sys_created_on>
         <sys_id>cef871cf979111108e05fbc71153af8e</sys_id>
-        <sys_mod_count>418</sys_mod_count>
+        <sys_mod_count>426</sys_mod_count>
         <sys_name>Cyberint_Pulling_Script</sys_name>
-        <sys_package display_value="Cyberint App" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+        <sys_package display_value="Check Point Exposure Management Alerts" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Cyberint App">9a49147a975111108e05fbc71153af5f</sys_scope>
+        <sys_scope display_value="Check Point Exposure Management Alerts">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sysauto_script_cef871cf979111108e05fbc71153af8e</sys_update_name>
         <sys_updated_by>KirillL</sys_updated_by>
-        <sys_updated_on>2026-02-02 10:52:30</sys_updated_on>
+        <sys_updated_on>2026-07-20 16:06:52</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
