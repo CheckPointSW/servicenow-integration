@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="customer_region" table="x_cyit_cyberint_configuration" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>customer_region</element>
+            <name>x_cyit_cyberint_configuration</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2026-08-05 09:49:41</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>customer_region</sys_name>
+            <sys_package display_value="Check Point Exposure Management Alerts (Cyberint)" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</sys_scope>
+            <sys_update_name>sys_choice_x_cyit_cyberint_configuration_customer_region</sys_update_name>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-08-05 09:49:41</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>customer_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>EU</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_configuration</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2026-08-05 09:49:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-08-05 10:38:39</sys_updated_on>
+            <value>EU</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>customer_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>US</label>
+            <language>en</language>
+            <name>x_cyit_cyberint_configuration</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>KirillL</sys_created_by>
+            <sys_created_on>2026-08-05 09:49:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>KirillL</sys_updated_by>
+            <sys_updated_on>2026-08-05 10:38:39</sys_updated_on>
+            <value>US</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
