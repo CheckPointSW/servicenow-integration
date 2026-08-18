@@ -61,9 +61,9 @@
         <sys_mod_count>24</sys_mod_count>
         <sys_name>Test Module</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Check Point Exposure Management Alerts" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+        <sys_package display_value="Check Point Exposure Management Alerts (Cyberint)" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Check Point Exposure Management Alerts">9a49147a975111108e05fbc71153af5f</sys_scope>
+        <sys_scope display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sys_script_409e3b131b3991104c029758b04bcb94</sys_update_name>
         <sys_updated_by>KirillL</sys_updated_by>
         <sys_updated_on>2024-01-17 20:08:47</sys_updated_on>

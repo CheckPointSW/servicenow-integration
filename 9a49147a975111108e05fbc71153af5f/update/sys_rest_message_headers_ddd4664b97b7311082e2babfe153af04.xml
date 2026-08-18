@@ -8,9 +8,9 @@
         <sys_id>ddd4664b97b7311082e2babfe153af04</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>X-Integration-Instance-Id</sys_name>
-        <sys_package display_value="Check Point Exposure Management Alerts" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+        <sys_package display_value="Check Point Exposure Management Alerts (Cyberint)" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Check Point Exposure Management Alerts">9a49147a975111108e05fbc71153af5f</sys_scope>
+        <sys_scope display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sys_rest_message_headers_ddd4664b97b7311082e2babfe153af04</sys_update_name>
         <sys_updated_by>KirillL</sys_updated_by>
         <sys_updated_on>2024-01-22 13:54:49</sys_updated_on>

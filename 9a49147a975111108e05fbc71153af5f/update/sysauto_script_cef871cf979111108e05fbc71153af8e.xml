@@ -29,6 +29,32 @@
 
     var PAGE_SIZE = 100;
 
+    // region -> Infinity Portal host, mirrors notification-service infinity_utils
+    const INFINITY_REGION_TO_PORTAL_URL = {
+        'eu-west-1': 'portal.checkpoint.com',
+        'us-east-1': 'portal.checkpoint.com',
+        'eu-west-2': 'uk.portal.checkpoint.com',
+        'ap-south-1': 'in.portal.checkpoint.com',
+        'ap-southeast-2': 'ap.portal.checkpoint.com',
+        'ca-central-1': 'ca.portal.checkpoint.com',
+        'me-central-1': 'ae.portal.checkpoint.com',
+        'staging': 'q.portal.checkpoint.com'
+    };
+    const DEFAULT_PORTAL_URL = 'portal.checkpoint.com';
+
+    // Infinity-connected tenants get a deep link into the Infinity Portal ERM;
+    // customers without an Infinity mapping keep the legacy Argos link.
+    // ERM addresses alerts by numeric id, the legacy UI by ref_id
+    function getAlertLink(alert) {
+        if (infinity_portal_enabled && infinity_region) {
+            const portal_host = INFINITY_REGION_TO_PORTAL_URL[infinity_region.toLowerCase()] || DEFAULT_PORTAL_URL;
+            const tenant_param = infinity_tenant_id ? `?tenantId=${infinity_tenant_id}` : '';
+            const alert_identifier = alert.id != null ? alert.id : alert.ref_id;
+            return `https://${portal_host}/dashboard/erm${tenant_param}#/alerts/alert/${alert_identifier}`;
+        }
+        return `https://${api_environment}.cyberint.io/alerts/alert/${alert.ref_id}`;
+    }
+
     function attachments(alert_id, alert_sys_id, attachment_id, file_name) {
         let r = new sn_ws.RESTMessageV2('x_cyit_cyberint.Cyberint_API', 'GET - Alert attachments');
 
@@ -70,6 +96,13 @@
             return;
         }
         logger('DEBUG', `Add Analysis Report for alert ${alert_id} : Status Code ${httpResponseStatus}`);
+    }
+
+    // server-side counterpart of g_form.getBooleanValue: True/False fields may
+    // store '1'/'0' or 'true'/'false' depending on how the value was written
+    function getBooleanValue(record, field) {
+        const value = String(record.getValue(field));
+        return value === '1' || value === 'true';
     }
 
     // arrays from the API may contain plain strings or objects;
@@ -183,7 +216,7 @@
             cia.targeted_brands = joinList(alert.targeted_brands);
             cia.targeted_vectors = joinList(alert.targeted_vectors);
             cia.threat_actor = alert.threat_actor;
-            cia.cyberint_alert = `https://${api_environment}.cyberint.io/alerts/alert/${alert.ref_id}`;
+            cia.cyberint_alert = getAlertLink(alert);
             if (!exist_alert && instance.enrich_alert == true) {
                 cia.attachments = "True";
             }
@@ -274,6 +307,14 @@
             // make it var for global script context
             var api_environment = instance.api_environment;
 
+            // Infinity Portal (ERM) link settings - when enabled and a region is set,
+            // alert links point to the Infinity Portal instead of the legacy Argos UI.
+            // getValue returns null for fields not yet on the table, keeping older
+            // configuration records on the legacy link
+            var infinity_portal_enabled = getBooleanValue(instance, 'infinity_portal_alert_links');
+            var infinity_region = (instance.getValue('infinity_portal_region') || '').trim();
+            var infinity_tenant_id = (instance.getValue('infinity_tenant_id') || '').trim();
+
             var x_integration_type = 'ServiceNow';
             x_integration_instance_name = instance.instance_name;
             var x_integration_instance_id = api_environment;
@@ -318,6 +359,8 @@
             const fetch_to = String(new GlideDateTime());
             logger('DEBUG', `Fetch window: ${fetch_from} -> ${fetch_to}`);
 
+            logger('INFO', `Infinity Portal Enabled: ${infinity_portal_enabled}`);
+            logger('INFO', `Alert link mode: ${(infinity_portal_enabled && infinity_region) ? 'infinity_portal' : 'argos'}`);
             logger('DEBUG', `Instance Status = "${instance.status}". About to start pulling...`);
             let x = 1;
             let total_alerts_to_fetch = 1;
@@ -347,19 +390,20 @@
     } catch (ex) {
         logger('ERROR', ex);
     }
-})(current, previous);]]></script>
+})(current, previous);
+]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-18 11:45:31</sys_created_on>
         <sys_id>cef871cf979111108e05fbc71153af8e</sys_id>
-        <sys_mod_count>426</sys_mod_count>
+        <sys_mod_count>435</sys_mod_count>
         <sys_name>Cyberint_Pulling_Script</sys_name>
-        <sys_package display_value="Check Point Exposure Management Alerts" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+        <sys_package display_value="Check Point Exposure Management Alerts (Cyberint)" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Check Point Exposure Management Alerts">9a49147a975111108e05fbc71153af5f</sys_scope>
+        <sys_scope display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</sys_scope>
         <sys_update_name>sysauto_script_cef871cf979111108e05fbc71153af8e</sys_update_name>
         <sys_updated_by>KirillL</sys_updated_by>
-        <sys_updated_on>2026-07-20 16:06:52</sys_updated_on>
+        <sys_updated_on>2026-08-18 14:20:03</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
