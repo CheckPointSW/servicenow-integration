@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="DELETE">
+        <choices/>
+        <description>HMAC key for returning user cookie signing. Auto-generated. Do not modify.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.session.admission.returning_auth_user_cookie.hmac_key</name>
+        <read_roles/>
+        <suffix>glide.session.admission.returning_auth_user_cookie.hmac_key</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-07-15 15:18:10</sys_created_on>
+        <sys_id>c7ee9f92934a07507f5f75856aba109f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>glide.session.admission.returning_auth_user_cookie.hmac_key</sys_name>
+        <sys_package display_value="Check Point Exposure Management Alerts (Cyberint)" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</sys_scope>
+        <sys_update_name>sys_properties_c7ee9f92934a07507f5f75856aba109f</sys_update_name>
+        <sys_updated_by>KirillL</sys_updated_by>
+        <sys_updated_on>2026-07-15 15:18:10</sys_updated_on>
+        <type>password</type>
+        <value>bei51WGh8I4ftYEIay6UG4+dPr1y+oNWGWk9lzZgxvs=</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</application>
+        <file_path/>
+        <instance_id>caa8766edbd7d9909df22f17d4961926</instance_id>
+        <instance_name>ven05816</instance_name>
+        <name>sys_properties_c7ee9f92934a07507f5f75856aba109f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="INSERT_OR_UPDATE"><choices/><description>HMAC key for returning user cookie signing. Auto-generated. Do not modify.</description><ignore_cache>false</ignore_cache><is_private>false</is_private><name>glide.session.admission.returning_auth_user_cookie.hmac_key</name><read_roles/><suffix>glide.session.admission.returning_auth_user_cookie.hmac_key</suffix><sys_class_name>sys_properties</sys_class_name><sys_created_by>KirillL</sys_created_by><sys_created_on>2026-07-15 15:18:10</sys_created_on><sys_id>c7ee9f92934a07507f5f75856aba109f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>glide.session.admission.returning_auth_user_cookie.hmac_key</sys_name><sys_package display_value="Check Point Exposure Management Alerts (Cyberint)" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package><sys_policy/><sys_scope display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</sys_scope><sys_update_name>sys_properties_c7ee9f92934a07507f5f75856aba109f</sys_update_name><sys_updated_by>KirillL</sys_updated_by><sys_updated_on>2026-07-15 15:18:10</sys_updated_on><type>password</type><value>bei51WGh8I4ftYEIay6UG4+dPr1y+oNWGWk9lzZgxvs=</value><write_roles/></sys_properties></record_update>]]></payload>
+        <payload_hash>659385878</payload_hash>
+        <record_name>glide.session.admission.returning_auth_user_cookie.hmac_key</record_name>
+        <reverted_from/>
+        <source>22914c038312031097b7a970ceaad3b5</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2026-07-29 17:22:19</sys_created_on>
+        <sys_id>c50c0f7dc33a8390f1aa2a8dc00131e0</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>19faee608f80000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>System Property</type>
+        <update_guid>850c0f7da63a8390b07f5017929aa2e0</update_guid>
+        <update_guid_history>850c0f7da63a8390b07f5017929aa2e0:659385878</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>KirillL</sys_created_by>
+        <sys_created_on>2026-08-20 07:25:41</sys_created_on>
+        <sys_db_object display_value="" name="sys_properties">sys_properties</sys_db_object>
+        <sys_id>0dc79432559e4568b8597b08cfe23f90</sys_id>
+        <sys_metadata>c7ee9f92934a07507f5f75856aba109f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>glide.session.admission.returning_auth_user_cookie.hmac_key</sys_name>
+        <sys_package display_value="Check Point Exposure Management Alerts (Cyberint)" source="x_cyit_cyberint">9a49147a975111108e05fbc71153af5f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Check Point Exposure Management Alerts (Cyberint)">9a49147a975111108e05fbc71153af5f</sys_scope>
+        <sys_scope_delete display_value="">20a118545962435487a56626089ddfc9</sys_scope_delete>
+        <sys_update_name>sys_properties_c7ee9f92934a07507f5f75856aba109f</sys_update_name>
+        <sys_update_version display_value="sys_properties_c7ee9f92934a07507f5f75856aba109f">c50c0f7dc33a8390f1aa2a8dc00131e0</sys_update_version>
+        <sys_updated_by>KirillL</sys_updated_by>
+        <sys_updated_on>2026-08-20 07:25:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
